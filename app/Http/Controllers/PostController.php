@@ -22,4 +22,17 @@ class PostController extends Controller
         Post::create($request->all());
         return response()->redirectToRoute('posts.index');
     }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', ['post' => $post]);
+    }
+    public function update(Request $request, Post $post) {
+        $post->update($request->all());
+        return response()->redirectToRoute('posts.index');
+    }
+    public function destroy(Post $post){
+        $post->delete();
+        return response()->redirectToRoute('posts.index');
+    }
 }
