@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    {{--<x-nav/>--}}
+    @livewire('nav-search')
+
     @yield('content')
 </body>
 </html>
